@@ -7,6 +7,7 @@ import (
 	"bluebell/routes"
 	"bluebell/settings"
 	"context"
+	"flag"
 	"fmt"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -21,8 +22,11 @@ import (
 //通用脚手架
 
 func main() {
+	//命令行配置
+	var fileName string
+	flag.StringVar(&fileName, "c", "./config/config.yaml", "配置文件")
 	//1.加载配置
-	if err := settings.Init(); err != nil {
+	if err := settings.Init(fileName); err != nil {
 		fmt.Printf("init config failed,err:%v\n", err)
 		return
 	}
