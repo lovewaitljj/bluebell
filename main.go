@@ -2,8 +2,8 @@ package main
 
 import (
 	"bluebell/dao/mysql"
-	"bluebell/dao/redis"
 	"bluebell/logger"
+	"bluebell/pkg/snowflake"
 	"bluebell/routes"
 	"bluebell/settings"
 	"context"
@@ -32,22 +32,28 @@ func main() {
 	}
 	//2.初始化日志
 	if err := logger.Init(); err != nil {
-		fmt.Printf("init config failed,err:%v\n", err)
+		fmt.Printf("init logger failed,err:%v\n", err)
 		return
 	}
 	defer zap.L().Sync()
 	//3.初始化mysql
 	if err := mysql.Init(); err != nil {
-		fmt.Printf("init config failed,err:%v\n", err)
+		fmt.Printf("init mysql failed,err:%v\n", err)
 		return
 	}
 	defer mysql.Close()
 	//4.初始化redis
-	if err := redis.Init(); err != nil {
-		fmt.Printf("init config failed,err:%v\n", err)
+	//if err := redis.Init(); err != nil {
+	//	fmt.Printf("init redis failed,err:%v\n", err)
+	//	return
+	//}
+	//defer redis.Close()
+	//5.初始化雪花算法
+	fmt.Printf("startTime:%v\n", settings.Conf.StartTime)
+	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
+		fmt.Printf("init snowflake failed,err:%v\n", err)
 		return
 	}
-	defer redis.Close()
 	// 注册路由
 	r := routes.Setup()
 	// 启动服务(优雅关机)

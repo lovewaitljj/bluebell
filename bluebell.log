@@ -6,3 +6,7 @@
 {"level":"INFO","time":"2024-09-08T22:58:53.372+0800","caller":"bluebell/main.go:70","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2024-09-08T22:58:53.373+0800","caller":"bluebell/main.go:79","msg":"Server exiting"}
 {"level":"ERROR","time":"2024-09-09T15:46:17.033+0800","caller":"mysql/mysql.go:24","msg":"connect DB failed","error":"dial tcp 127.0.0.1:3306: connect: connection refused"}
+{"level":"ERROR","time":"2024-09-11T10:25:16.341+0800","caller":"mysql/mysql.go:24","msg":"connect DB failed","error":"Error 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)"}
+{"level":"ERROR","time":"2024-09-11T10:25:37.041+0800","caller":"mysql/mysql.go:24","msg":"connect DB failed","error":"Error 1049 (42000): Unknown database 'bluebell_db'"}
+{"level":"INFO","time":"2024-09-12T16:42:45.665+0800","caller":"bluebell/main.go:81","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-09-12T16:42:45.668+0800","caller":"bluebell/main.go:90","msg":"Server exiting"}

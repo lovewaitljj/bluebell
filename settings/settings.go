@@ -7,14 +7,19 @@ import (
 	"go.uber.org/zap"
 )
 
-var Conf = new(AppConfig)
+var Conf = new(Config)
+
+type Config struct {
+	*AppConfig `mapstructure:"app"`
+}
 
 type AppConfig struct {
-	Name    string `mapstructure:"name"`
-	Version string `mapstructure:"version"`
-	Mode    string `mapstructure:"mode"`
-	Port    int    `mapstructure:"port"`
-
+	Name         string `mapstructure:"name"`
+	Version      string `mapstructure:"version"`
+	Mode         string `mapstructure:"mode"`
+	Port         int    `mapstructure:"port"`
+	StartTime    string `mapstructure:"start_time"`
+	MachineID    int64  `mapstructure:"machine_id"`
 	*LogConfig   `mapstructure:"log"`
 	*MysqlConfig `mapstructure:"mysql"`
 	*RedisConfig `mapstructure:"redis"`
@@ -64,5 +69,4 @@ func Init(fileName string) (err error) {
 		}
 	})
 	return
-
 }

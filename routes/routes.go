@@ -13,5 +13,8 @@ func Setup() *gin.Engine {
 	r.GET("/", func(c *gin.Context) {
 		c.String(http.StatusOK, "okk")
 	})
+	//业务逻辑路由
+	r.POST("/register")
+
 	return r
 }
