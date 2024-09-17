@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"bluebell/controller"
 	"bluebell/logger"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -14,7 +15,7 @@ func Setup() *gin.Engine {
 		c.String(http.StatusOK, "okk")
 	})
 	//业务逻辑路由
-	r.POST("/register")
+	r.POST("/register", controller.RegisterHandler)
 
 	return r
 }

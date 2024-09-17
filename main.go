@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bluebell/controller"
 	"bluebell/dao/mysql"
 	"bluebell/logger"
 	"bluebell/pkg/snowflake"
@@ -52,6 +53,11 @@ func main() {
 	fmt.Printf("startTime:%v\n", settings.Conf.StartTime)
 	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
 		fmt.Printf("init snowflake failed,err:%v\n", err)
+		return
+	}
+	//初始化校验器
+	if err := controller.InitTrans("zh"); err != nil {
+		fmt.Printf("init validator trans failed,err:%v\n", err)
 		return
 	}
 	// 注册路由
