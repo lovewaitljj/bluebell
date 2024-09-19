@@ -7,6 +7,7 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/schema"
 )
 
 var db *gorm.DB
@@ -19,7 +20,10 @@ func Init() (err error) {
 		viper.Get("mysql.port"),
 		viper.Get("mysql.db_name"),
 	)
-	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true, // 全局禁用复数表名
+		}})
 	if err != nil {
 		zap.L().Error("connect DB failed", zap.Error(err))
 		return

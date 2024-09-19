@@ -29,7 +29,13 @@ func RegisterHandler(c *gin.Context) {
 		return
 	}
 	//2.业务逻辑
-	service.Register(&req)
+	err = service.Register(&req)
+	if err != nil {
+		zap.L().Error("register with invalid param", zap.Error(err))
+		c.JSON(http.StatusOK, gin.H{
+			"msg": err.Error(),
+		})
+	}
 	//3.返回相应
 	c.JSON(http.StatusOK, gin.H{
 		"msg": "success",
