@@ -23,6 +23,8 @@ func Register(req *models.RegisterReq) error {
 		UserID:   uint64(userId),
 		Username: req.Username,
 		Password: md5.MD5Encrypt((req.Password)),
+		Email:    req.Email,
+		Gender:   req.Gender,
 	}
 	err = mysql.CreateUser(user)
 	if err != nil {
