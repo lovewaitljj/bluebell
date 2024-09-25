@@ -12,3 +12,7 @@ type User struct {
 	CreateTime time.Time `gorm:"column:create_time;type:timestamp;default:CURRENT_TIMESTAMP"`                             // 创建时间
 	UpdateTime time.Time `gorm:"column:update_time;type:timestamp;default:CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP"` // 更新时间
 }
+
+func (u User) TableName() string {
+	return "user"
+}

@@ -35,6 +35,7 @@ func RegisterHandler(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"msg": err.Error(),
 		})
+		return
 	}
 	//3.返回相应
 	c.JSON(http.StatusOK, gin.H{

@@ -3,19 +3,18 @@ package mysql
 import (
 	"bluebell/models"
 	"errors"
-	"gorm.io/gorm"
 )
 
 // CheckUserExist 判断用户是否存在(用户名)
-func CheckUserExist(username string) (bool, error) {
-	user := new(models.User)
-	if err := db.Where("username = ?", username).First(user).Error; err != nil {
-		if errors.Is(err, gorm.ErrRecordNotFound) {
-			return false, nil
-		}
-		return false, err
+func CheckUserExist(username string) error {
+	var count int
+	if err := db.Table(models.User{}.TableName()).Select("COUNT(*)").Where("username = ?", username).Find(&count).Error; err != nil {
+		return err
 	}
-	return true, nil
+	if count > 0 {
+		return errors.New("用户已存在")
+	}
+	return nil
 }
 
 // CreateUser 插入用户
