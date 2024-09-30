@@ -28,3 +28,13 @@ func Register(req *models.RegisterReq) error {
 	}
 	return nil
 }
+
+func Login(req *models.LoginReq) error {
+	//1.用户名是否存在
+	//2.密码是否正确
+	user := &models.User{
+		Username: req.Username,
+		Password: req.Password,
+	}
+	return mysql.Login(user)
+}

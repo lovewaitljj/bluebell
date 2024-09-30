@@ -15,7 +15,8 @@ func Setup() *gin.Engine {
 		c.String(http.StatusOK, "okk")
 	})
 	//业务逻辑路由
-	r.POST("/register", controller.RegisterHandler)
+	r.POST("/register", controller.RegisterHandler) // 注册
+	r.POST("/login", controller.LoginHandler)       // 登录
 
 	return r
 }

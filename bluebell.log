@@ -134,3 +134,25 @@
 {"level":"INFO","time":"2024-09-25T10:33:03.451+0800","caller":"logger/logger.go:73","msg":"/register","status":200,"method":"POST","path":"/register","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.036090542}
 {"level":"INFO","time":"2024-09-25T10:34:13.483+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2024-09-25T10:34:13.483+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
+{"level":"INFO","time":"2024-09-30T15:21:55.167+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-09-30T15:21:55.170+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
+{"level":"ERROR","time":"2024-09-30T15:22:11.273+0800","caller":"controller/user.go:35","msg":"register with invalid param","error":"用户已存在"}
+{"level":"INFO","time":"2024-09-30T15:22:11.274+0800","caller":"logger/logger.go:73","msg":"/register","status":200,"method":"POST","path":"/register","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.03198425}
+{"level":"ERROR","time":"2024-09-30T15:22:24.665+0800","caller":"controller/user.go:53","msg":"login with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"INFO","time":"2024-09-30T15:22:24.665+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.000372916}
+{"level":"ERROR","time":"2024-09-30T15:22:29.543+0800","caller":"controller/user.go:53","msg":"login with invalid param","error":"Key: 'LoginReq.password' Error:Field validation for 'password' failed on the 'required' tag"}
+{"level":"INFO","time":"2024-09-30T15:22:29.543+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.000430209}
+{"level":"ERROR","time":"2024-09-30T15:22:38.752+0800","caller":"controller/user.go:69","msg":"login failed","username":"zyh2","error":"密码不正确"}
+{"level":"INFO","time":"2024-09-30T15:22:38.755+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.005293583}
+{"level":"ERROR","time":"2024-09-30T15:22:41.663+0800","caller":"controller/user.go:69","msg":"login failed","username":"zyh2","error":"密码不正确"}
+{"level":"INFO","time":"2024-09-30T15:22:41.663+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.001538}
+{"level":"ERROR","time":"2024-09-30T15:22:42.835+0800","caller":"controller/user.go:69","msg":"login failed","username":"zyh2","error":"密码不正确"}
+{"level":"INFO","time":"2024-09-30T15:22:42.835+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.00111225}
+{"level":"INFO","time":"2024-09-30T15:25:39.030+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-09-30T15:25:39.032+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
+{"level":"INFO","time":"2024-09-30T15:25:51.444+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.003149709}
+{"level":"INFO","time":"2024-09-30T16:41:27.663+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-09-30T16:41:27.666+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
+{"level":"INFO","time":"2024-09-30T16:41:50.222+0800","caller":"logger/logger.go:73","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.42.0","errors":"","cost":0.002480208}
+{"level":"INFO","time":"2024-09-30T16:43:51.381+0800","caller":"bluebell/main.go:86","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2024-09-30T16:43:51.382+0800","caller":"bluebell/main.go:95","msg":"Server exiting"}
