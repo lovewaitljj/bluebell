@@ -32,6 +32,7 @@ func RegisterHandler(c *gin.Context) {
 		zap.L().Error(" service.Register failed", zap.Error(err))
 		if errors.Is(err, mysql.ErrUserExists) {
 			ResponseError(c, CodeUserExist)
+			return
 		}
 		ResponseError(c, CodeServerBusy)
 		return
